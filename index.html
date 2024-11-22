@@ -49,6 +49,22 @@
             font-size: 0.9em;
             color: #555;
         }
+        /* Countdown Modal */
+        #countdownModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+            width: 300px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -61,32 +77,75 @@
             <h2>Optimized Cultural Indices</h2>
             <p class="description">This figure allows users to compare survey-based and ChatGPT-transformed cultural indices with dropdown menus to filter regions.</p>
             <ul>
-                <li><a href="optimized_cultural_indices.html" target="_blank">View Optimized Cultural Indices</a></li>
+                <li><a href="optimized_cultural_indices.html" class="countdown-link" target="_blank">View Optimized Cultural Indices</a></li>
             </ul>
         </section>
         <section>
             <h2>Lollipop Chart Comparison</h2>
             <p class="description">A lollipop chart comparing cultural indices for various regions, highlighting differences between survey and ChatGPT results.</p>
             <ul>
-                <li><a href="lollipop_chart_comparison.html" target="_blank">View Lollipop Chart Comparison</a></li>
+                <li><a href="lollipop_chart_comparison.html" class="countdown-link" target="_blank">View Lollipop Chart Comparison</a></li>
             </ul>
         </section>
         <section>
             <h2>Dropdown-Enabled Cultural Indices</h2>
             <p class="description">Interactive figures featuring dropdown menus to explore cultural indices for survey and ChatGPT data by region.</p>
             <ul>
-                <li><a href="cultural_indices_survey_dropdown.html" target="_blank">View Survey Cultural Indices</a></li>
-                <li><a href="cultural_indices_chatgpt_dropdown.html" target="_blank">View ChatGPT Cultural Indices</a></li>
+                <li><a href="cultural_indices_survey_dropdown.html" class="countdown-link" target="_blank">View Survey Cultural Indices</a></li>
+                <li><a href="cultural_indices_chatgpt_dropdown.html" class="countdown-link" target="_blank">View ChatGPT Cultural Indices</a></li>
             </ul>
         </section>
         <section>
             <h2>Interactive World Maps</h2>
             <p class="description">Explore global metrics using choropleth maps for traditional vs secular values and survival vs self-expression.</p>
             <ul>
-                <li><a href="interactive_map1.html" target="_blank">Traditional vs Secular Metrics</a></li>
-                <li><a href="interactive_map2.html" target="_blank">Survival vs Self-Expression Metrics</a></li>
+                <li><a href="interactive_map1.html" class="countdown-link" target="_blank">Traditional vs Secular Metrics</a></li>
+                <li><a href="interactive_map2.html" class="countdown-link" target="_blank">Survival vs Self-Expression Metrics</a></li>
             </ul>
         </section>
     </main>
+
+    <!-- Countdown Modal -->
+    <div id="countdownModal">
+        <p id="countdownMessage">Redirecting in <span id="countdownTimer">5</span> seconds...</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('.countdown-link'); // Only apply to links with this class
+            const countdownModal = document.getElementById('countdownModal');
+            const countdownTimer = document.getElementById('countdownTimer');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    const targetUrl = link.href;
+                    const delay = 5; // Countdown time in seconds
+                    let timeLeft = delay;
+
+                    // Prevent default link behavior
+                    event.preventDefault();
+
+                    // Show countdown modal
+                    countdownModal.style.display = 'block';
+
+                    // Update countdown every second
+                    const timerInterval = setInterval(() => {
+                        timeLeft -= 1;
+                        countdownTimer.textContent = timeLeft;
+
+                        // Redirect when countdown finishes
+                        if (timeLeft <= 0) {
+                            clearInterval(timerInterval);
+                            countdownModal.style.display = 'none';
+                            window.location.href = targetUrl;
+                        }
+                    }, 1000);
+
+                    // Set initial countdown value
+                    countdownTimer.textContent = timeLeft;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
