@@ -3,13 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Maps</title>
+    <title>Interactive Figures Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .description {
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-    <h1>Interactive Maps</h1>
-    <ul>
-        <li><a href="interactive_map1.html" target="_blank">Traditional vs Secular Metrics</a></li>
-        <li><a href="interactive_map2.html" target="_blank">Survival vs Self-Expression Metrics</a></li>
-    </ul>
+    <header>
+        <h1>Interactive Figures Gallery</h1>
+        <p>Explore various interactive visualizations of cultural indices and metrics.</p>
+    </header>
+    <main>
+        <section>
+            <h2>Optimized Cultural Indices</h2>
+            <p class="description">This figure allows users to compare survey-based and ChatGPT-transformed cultural indices with dropdown menus to filter regions.</p>
+            <ul>
+                <li><a href="optimized_cultural_indices.html" target="_blank">View Optimized Cultural Indices</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Lollipop Chart Comparison</h2>
+            <p class="description">A lollipop chart comparing cultural indices for various regions, highlighting differences between survey and ChatGPT results.</p>
+            <ul>
+                <li><a href="lollipop_chart_comparison.html" target="_blank">View Lollipop Chart Comparison</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Dropdown-Enabled Cultural Indices</h2>
+            <p class="description">Interactive figures featuring dropdown menus to explore cultural indices for survey and ChatGPT data by region.</p>
+            <ul>
+                <li><a href="cultural_indices_survey_dropdown.html" target="_blank">View Survey Cultural Indices</a></li>
+                <li><a href="cultural_indices_chatgpt_dropdown.html" target="_blank">View ChatGPT Cultural Indices</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Interactive World Maps</h2>
+            <p class="description">Explore global metrics using choropleth maps for traditional vs secular values and survival vs self-expression.</p>
+            <ul>
+                <li><a href="interactive_map1.html" target="_blank">Traditional vs Secular Metrics</a></li>
+                <li><a href="interactive_map2.html" target="_blank">Survival vs Self-Expression Metrics</a></li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
